@@ -17,18 +17,21 @@ header {
     background-color: rgb(34, 34, 34);
     padding: 2px 0px;    
 }
+#hidden-nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    font-size: 40px;
+}
 @media only screen and (min-width: 480px) {
     #hidden-nav-bar {
      display: block;
-   }
- }
+    }
+}
 
 #hidden-nav-bar ul {    
     text-align: center;
 }
-/*#hidden-nav-bar li {
-    display: inline;  
-}*/
 #hidden-nav-bar a {
     color: rgb(251, 240, 240);
     font-size: 12px;
@@ -39,3 +42,5 @@ header {
     border-radius: 7px;
     padding: 5px 0px;
 }
+
+
