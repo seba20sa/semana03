@@ -1,0 +1,41 @@
+/*Header*/
+header {
+    background-color: rgb(196, 0, 4);
+}
+#first-section {
+    text-align: center;    
+}
+#first-section span {
+    font-family: 'Franklin Gothic Medium',
+     'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;    
+}
+#hidden-nav-bar {
+    display: none;
+    background-color: rgb(34, 34, 34);
+    padding: 2px 0px;    
+}
+@media only screen and (min-width: 480px) {
+    #hidden-nav-bar {
+     display: block;
+   }
+ }
+
+#hidden-nav-bar ul {    
+    text-align: center;
+}
+/*#hidden-nav-bar li {
+    display: inline;  
+}*/
+#hidden-nav-bar a {
+    color: rgb(251, 240, 240);
+    font-size: 12px;
+    margin: 10px;        
+}
+#hidden-nav-bar button  {
+    background-color: rgb(80, 130, 60);
+    border-radius: 7px;
+    padding: 5px 0px;
+}

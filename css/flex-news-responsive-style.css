@@ -1,0 +1,28 @@
+#hidden-nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    font-size: 40px;
+}
+
+#related-news-section {
+    display: flex;
+    flex-direction: column;        
+    justify-content: space-around;     
+}
+#related-news-section img {
+    align-items: flex-start;
+}
+#related-news-section p {
+    align-items: flex-end;
+}
+#footer-nav-bar {    
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-around;    
+}
+#footer-social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
