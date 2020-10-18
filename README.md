@@ -1,5 +1,5 @@
 # Semana03
-https://seba20sa.github.io/semana03/
+https://seba20sa.github.io/semana03/flex-news-responsive.html
 
 ## First 
 I created te raw html of the site adding *IDs* and *classes* to the elements as I saw fit in order to style them later with the idea of creating a reusable *CSS* library.
