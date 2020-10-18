@@ -3,44 +3,66 @@ header {
     background-color: rgb(196, 0, 4);
 }
 #first-section {
-    text-align: center;    
+    text-align: center;
+    padding: 10px 0px;
 }
 #first-section span {
+    text-transform: uppercase;
     font-family: 'Franklin Gothic Medium',
      'Arial Narrow', Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 40px;
-    font-weight: bold;    
+    font-size: 60px;
+    font-weight: bold;
+}
+@media only screen and (min-width: 1024px) {
+    #first-section span {
+     font-size: 80px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #first-section span {
+     font-size: 100zpx;
+    }
 }
 #hidden-nav-bar {
     display: none;
+    padding: 2px 0px;
     background-color: rgb(34, 34, 34);
-    padding: 2px 0px;    
 }
-#hidden-nav-bar ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    font-size: 40px;
-}
+/*hidden-nav-bar media queries 480, 900 and 1024*/
 @media only screen and (min-width: 480px) {
     #hidden-nav-bar {
      display: block;
     }
 }
-
-#hidden-nav-bar ul {    
+@media only screen and (min-width: 900px) {
+    #hidden-nav-bar ul li a {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    #hidden-nav-bar ul li a {
+     font-size: 30px;
+    }
+}
+#hidden-nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
     text-align: center;
 }
 #hidden-nav-bar a {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 16px;
     color: rgb(251, 240, 240);
-    font-size: 12px;
-    margin: 10px;        
 }
-#hidden-nav-bar button  {
+#hidden-nav-bar button {
+    padding: 3px;
+    background-color: rgb(34, 34, 34);
+    border: solid 2px rgb(34, 34, 34);
+}
+#hidden-nav-bar button a{    
+    padding: 8px;
     background-color: rgb(80, 130, 60);
-    border-radius: 7px;
-    padding: 5px 0px;
+    border-radius: 3px;
 }
-
-
