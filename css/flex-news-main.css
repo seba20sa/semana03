@@ -65,6 +65,17 @@ body li {
     display: flex;    
     justify-content: space-around;
 }
+#main-story{    
+    flex: 2;    
+}
+@media only screen and (max-width: 768px) {
+    #main-story  {
+        flex: 1;        
+    }
+    #main-story img {
+        width: 75%;
+    }        
+}
 .related-news-section .box {
     flex: 1;
 }
@@ -93,7 +104,7 @@ body li {
     border-radius: 15px;
 }
 @media only screen and (max-width: 768px) {
-    .related-news-section  {
+    .related-news-section {
      flex-direction: column;
     }
 }
@@ -112,6 +123,6 @@ body li {
 }
 @media only screen and (max-width: 900px) {
     #ads-section .box:last-child {
-        display: none;     
+        display: none;
     }
 }
