@@ -1,6 +1,7 @@
 form {
     background-color: aqua;
     padding: 10px 0px 15px 0px;    
+    border-radius: 7px;
 }
 form label {
     font-weight: bold;
@@ -9,18 +10,26 @@ form label {
 form input {
     border-radius: 7px;
 }
+form p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 45px;
+}
 #button-wrap {
+    margin-top: 20px;    
     text-align: center;
     background-color: aqua;
     padding-bottom: 15px;
 }
 #send-button {
+    
     width: 260px;
     border-radius: 7px;
     font-weight: bold;
 }
 @media only screen and (min-width: 480px) {   
-    form {
+    #forms-container  {
         text-align: center;
         flex-direction: column;
     }
@@ -39,5 +48,5 @@ form input {
     }
     #left-form, #right-form {
         flex: 1;        
-    }    
+    }
 }
