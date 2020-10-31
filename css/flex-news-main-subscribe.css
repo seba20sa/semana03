@@ -1,0 +1,43 @@
+form {
+    background-color: aqua;
+    padding: 10px 0px 15px 0px;    
+}
+form label {
+    font-weight: bold;
+    color: rgb(80, 130, 60);    
+}
+form input {
+    border-radius: 7px;
+}
+#button-wrap {
+    text-align: center;
+    background-color: aqua;
+    padding-bottom: 15px;
+}
+#send-button {
+    width: 260px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+@media only screen and (min-width: 480px) {   
+    form {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 768px) {   
+    #forms-container {
+        text-align: center;
+        flex-direction: column;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #forms-container{
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+    }
+    #left-form, #right-form {
+        flex: 1;        
+    }    
+}
