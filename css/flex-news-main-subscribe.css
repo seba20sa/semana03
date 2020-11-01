@@ -9,6 +9,7 @@ form label {
 }
 form input {
     border-radius: 7px;
+    width: 60%;
 }
 form p {
     text-align: center;
@@ -16,14 +17,22 @@ form p {
     font-size: 25px;
     margin-bottom: 45px;
 }
+
+/*Error class starts always hidden*/
+.error-message-hidden {
+    display: none;        
+}
+.error-message-shown {    
+    font-weight: blod;
+    color: red;    
+}
 #button-wrap {
     margin-top: 20px;    
     text-align: center;
-    background-color: aqua;
+    
     padding-bottom: 15px;
 }
-#send-button {
-    
+#send-button {    
     width: 260px;
     border-radius: 7px;
     font-weight: bold;

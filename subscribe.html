@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/flex-news-main-subscribe.css">
     <link rel="stylesheet" type="text/css" href="css/flex-news-footer.css">
     <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+    
     <title>formulario</title>    
 </head>
 <body>
@@ -77,65 +78,116 @@
         <div id="forms-container">
             <div id="left-form">
             <label for="fullname">
-            Full name:
+                Full name:
             </label> 
             <br>
-            <input type="text" name="fullname">
+            <input type="text" name="fullname" id="fullname">
+            <div class="error-message-hidden" id="error-name">
+                <span>
+                    Name is too short or have no spaces
+                </span>
+            </div>
             <br>
-            <label for="mail">Email: </label>
+            <label for="email">
+                Email:
+            </label>
             <br>
-            <input type="text" name="mail">
+            <input type="text" name="email" id="email">
+            <div class="error-message-hidden" id="error-email">
+                <span>
+                    Invalid mail
+                </span>
+            </div>
             <br>
             <label for="firspassword">
                 Create a password:
-            </label>        
+            </label>                    
             <br>
-            <input type="text" name="firstpassword">
+            <input type="password" name="first-password" id="first-password">
+            <div class="error-message-hidden" id="error-first-password">
+                <span>
+                    It has to be made of numers AND letters
+                </span>
+            </div>
             <br>
             <label for="secondpassword">
                 Verify your password:
             </label>
             <br>
-            <input type="text" name="secondpassword">
+            <input type="password" name="secondpassword" id="second-password">
+            <div class="error-message-hidden" id="error-second-password">
+                <span>
+                    Passwords don't match 
+                </span>
+            </div>
             <br>
             <label for="age">
                 Age:
             </label>
             <br>
-            <input type="text" name="age">
-            <br>
-                
+            <input type="number" name="age" id="age">
+            <div class="error-message-hidden" id="error-age">
+                <span>
+                    Age must be over 18 
+                </span>
+            </div>
+            <br>                
             </div>
             <div id="right-form">
                 <label for="number">
                     Contact:
                 </label>
                 <br>
-                <input type="text" name="phonenumber">
+                <input type="text" name="phonenumber" id="phone-number">
+                <div class="error-message-hidden" id="error-phone-number">
+                    <span>
+                        Must be only numbers and no less than 7 digits
+                    </span>
+                </div>
                 <br>  
                 <label for="adress">
                     Adress:
                 </label>
                 <br>
                 <input type="text" id="adress">
+                <div class="error-message-hidden" id="error-adress">
+                    <span>
+                        Only one space, no less than 5 characters. 
+                    </span>
+                </div>
                 <br>
                 <label for="city">
                     City:
                 </label>
                 <br>
                 <input type="text" id="city">
+                <div class="error-message-hidden" id="error-city">
+                    <span>
+                        Must be at least 3 characters long
+                    </span>
+                </div>
                 <br>
                 <label for="zipcode">
                 Zip Code:
                 </label>
                 <br>
-                <input type="text" id="zipcode">
+                <input type="number" id="zip-code">
+                <div class="error-message-hidden" id="error-zip-code">
+                    <span>
+                        Must have 3 characters or more.
+                    </span>
+                </div>
                 <br>
                 <label for="dni">
                     DNI:
                 </label>
                 <br>
-                <input type="text" id="dni">
+                <input type="number" id="dni-number">
+                <div class="error-message-hidden" id="error-dni-number">
+                    <span>
+                        Mus be 7 to 8 charactsers long.
+                    </span>
+                </div>
                 <br>                   
             </div>
         </div>
@@ -206,7 +258,7 @@
         </div>
     </footer>
 </body>
-
+<script src="js/subscribe.js"></script>
 </html>
 
 
