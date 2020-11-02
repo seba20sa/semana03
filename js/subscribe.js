@@ -260,7 +260,7 @@ function infoAlert(e) {
     }else {
         alertArray=[];
         for(x = 0; x < labelArray.length; x++) {
-            const y = (labelArray[x] + ' ' + dataArray[x] + ' ' + errorArray[x] + ' '+ );
+            const y = (labelArray[x] + ' ' + dataArray[x] + ' ' + errorArray[x] + ' ');
             alertArray.push( y );
             alertArray.push('\n');
         }
@@ -271,8 +271,9 @@ function infoAlert(e) {
             alertString=alertString+(String(alertArray[i]));
         } 
         
-        
+        console.log(alertString);
         alert(alertString);
+        e.preventDefault();
     }
   
      
