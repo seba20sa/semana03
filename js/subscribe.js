@@ -11,8 +11,8 @@ var age = document.getElementById('age');
 var errorAge = document.getElementById('error-age');
 var phoneNumber = document.getElementById('phone-number');
 var errorPhoneNumber = document.getElementById('error-phone-number');
-var adress = document.getElementById('adress');
-var errorAdress = document.getElementById('error-adress');
+var address = document.getElementById('address');
+var errorAddress = document.getElementById('error-address');
 var city = document.getElementById('city');
 var errorCity = document.getElementById('error-city');
 var zipCode = document.getElementById('zip-code');
@@ -33,8 +33,8 @@ age.addEventListener('blur', checkAge);
 age.addEventListener('focus', hideErrorAge);
 phoneNumber.addEventListener('blur', checkPhoneNumber);
 phoneNumber.addEventListener('focus', hideErrorPhoneNumber);
-adress.addEventListener('blur', checkAdress);
-adress.addEventListener('focus', hideErrorAdress);
+address.addEventListener('blur', checkAddress);
+address.addEventListener('focus', hideErrorAddress);
 city.addEventListener('blur', checkCity);
 city.addEventListener('focus', hideErrorCity);
 zipCode.addEventListener('blur', checkZipCode);
@@ -122,25 +122,25 @@ function checkPhoneNumber(e) {
         console.log(phoneNumber.value);
     }
 }
-function hideErrorAdress(e) {
-    errorAdress.className = 'error-message-hidden';
+function hideErrorAddress(e) {
+    errorAddress.className = 'error-message-hidden';
 }
-function checkAdress(e) {
+function checkAddress(e) {
     arrayLetters = [];
     arrayNumbers = [];
-    for (i = 0; i < adress.value.length; i++) {
-        if(!isNaN(adress.value[i])) {
-            arrayNumbers.push(adress.value[i]);
+    for (i = 0; i < address.value.length; i++) {
+        if(!isNaN(address.value[i])) {
+            arrayNumbers.push(address.value[i]);
         } else {
-            arrayLetters.push(adress.value[i]);
+            arrayLetters.push(address.value[i]);
         }
     }
-    if (!adress.value.includes(' ')  || arrayLetters.length == 0 || arrayNumbers.length == 0 || 
-    adress.value[adress.value.length-1] === ' ') {
-        errorAdress.className = 'error-message-shown';
+    if (!address.value.includes(' ')  || arrayLetters.length == 0 || arrayNumbers.length == 0 || 
+    address.value[address.value.length-1] === ' ') {
+        errorAddress.className = 'error-message-shown';
          
     } else {
-        console.log (adress.value);
+        console.log (address.value);
     }
 }
 function hideErrorCity(e) {
@@ -181,7 +181,7 @@ function checkDniNumber(e) {
 //Alert with the form info or the errors report
 function infoAlert(e) {
     labelArray = ['Name: ', 'Email: ', 'Password: ', 'Password verification: ',
-    'Age: ', 'Contact number: ', 'Adress: ', 'city: ', 'zip code: ', 'DNI: '];
+    'Age: ', 'Contact number: ', 'Address: ', 'city: ', 'zip code: ', 'DNI: '];
     dataArray = [];
     errorArray=[];
     if(errorName.className === 'error-message-shown'){
@@ -226,11 +226,11 @@ function infoAlert(e) {
          dataArray.push(String(phoneNumber.value));
          errorArray.push(' ');
     }
-    if(errorAdress.className === 'error-message-shown'){
+    if(errorAddress.className === 'error-message-shown'){
         errorArray.push('is invalid');
         dataArray.push(' ');
     } else {
-         dataArray.push(String(adress.value));
+         dataArray.push(String(address.value));
          errorArray.push(' ');
     }
     if(errorCity.className === 'error-message-shown'){
