@@ -1,4 +1,3 @@
-
 // Variables
 var fullName = document.getElementById('fullname');
 var errorName = document.getElementById('error-name');
@@ -20,7 +19,7 @@ var zipCode = document.getElementById('zip-code');
 var errorZipCode = document.getElementById('error-zip-code');
 var dniNumber = document.getElementById('dni-number');
 var errorDniNumber = document.getElementById('error-dni-number');
-
+var submitButton = document.getElementById('submit-button');
 //Events listeners
 fullName.addEventListener ('blur', checkName);
 fullName.addEventListener ('focus', hideErrorName);
@@ -42,31 +41,34 @@ zipCode.addEventListener('blur', checkZipCode);
 zipCode.addEventListener('focus', hideErrorZipCode);
 dniNumber.addEventListener('blur', checkDniNumber);
 dniNumber.addEventListener('focus', hideErrorDniNumber);
+submitButton.addEventListener('click', infoAlert);
 //Actions
 function hideErrorName(e) {
     errorName.className = 'error-message-hidden';
 }
-function checkName(e) {    
-         if(fullName.value.length >= '6' && fullName.value.includes(' ')) { 
-            console.log(fullName.value);            
-        } else {
-            console.log('ERROR!');
-            errorName.className = 'error-message-shown';
-        }
+function checkName(e) {
+    if (fullName.value.length >= '6' && fullName.value.includes(' ')) { 
+    console.log(fullName.value);
+    } else if (fullName.value == '') {
+        errorName.className = 'error-message-shown';
+    } else {
+        errorName.className = 'error-message-shown';
+    }
 }
 function hideErrorEmail(e) {
-    errorEmail.className = 'error-message-hidden'
+    errorEmail.className = 'error-message-hidden';
 }
-function checkMail(e) {    
-         if(email.value.includes('@') && email.value.includes('.com')) { 
-            console.log(email.value);            
-        } else {
-            console.log('ERROR!');
-            errorEmail.className = 'error-message-shown';
-        }
+function checkMail(e) {
+    if(email.value.includes('@') && email.value.includes('.com')) {
+    console.log(email.value);
+    } else if (email.value == '') {
+        errorEmail.className = 'error-message-shown';
+    } else {
+        console.log('ERROR!');
+        errorEmail.className = 'error-message-shown';
+    }
 }
-
-function hideErrorFirstPassword(e) { 
+function hideErrorFirstPassword(e) {
     errorFirstPassword.className = 'error-message-hidden';
 }
 function checkFirstPassword(e) {
@@ -81,7 +83,9 @@ function checkFirstPassword(e) {
     }    
     if (arrayLetters.length == 0 || arrayNumbers.length == 0) {
         errorFirstPassword.className = 'error-message-shown';
-    } else{
+    } else if (firstPassword.value == '') {
+        errorFirstPassword.className = 'error-message-shown';
+    } else {
         console.log(arrayLetters);
         console.log(arrayNumbers);
         console.log(firstPassword.value);
@@ -91,29 +95,26 @@ function hideErrorSecondPassword(e) {
     errorSecondPassword.className = 'error-message-hidden';
 }
 function checkSecondPassword(e) {
-    if (secondPassword.value != firstPassword.value) {
-        console.log('Error!');
+    if (secondPassword.value != firstPassword.value || secondPassword.value =='') {
         errorSecondPassword.className = 'error-message-shown';
     } else {
         console.log(secondPassword.value);
     }
 }
-
 function hideErrorAge(e) {
     errorAge.className = 'error-message-hidden';
 }
 function checkAge(e) {
-    if (age.value >= 18 && Math.round(age.value) == age.value) {
+    if ((age.value >= 18 && age.value <=100) && Math.round(age.value) == age.value) {
         console.log(age.value);
     } else { 
-        console.log('ERROR!');
         errorAge.className = 'error-message-shown';
     }
 }
-function hideErrorPhoneNumber(e) { 
+function hideErrorPhoneNumber(e) {
     errorPhoneNumber.className = 'error-message-hidden';
 }
-function checkPhoneNumber (e) {
+function checkPhoneNumber(e) {
     if (isNaN(phoneNumber.value) || phoneNumber.value.length < 7) {
         console.log('Error!')
         errorPhoneNumber.className = 'error-message-shown';
@@ -121,7 +122,7 @@ function checkPhoneNumber (e) {
         console.log(phoneNumber.value);
     }
 }
-function hideErrorAdress (e) {
+function hideErrorAdress(e) {
     errorAdress.className = 'error-message-hidden';
 }
 function checkAdress(e) {
@@ -139,7 +140,7 @@ function checkAdress(e) {
         errorAdress.className = 'error-message-shown';
          
     } else {
-        console.log (adress.value);        
+        console.log (adress.value);
     }
 }
 function hideErrorCity(e) {
@@ -147,7 +148,7 @@ function hideErrorCity(e) {
 }
 function checkCity(e) {
     if (city.value.length >=3) {
-        console.log(city.value);        
+        console.log(city.value);
     } else {
         console.log('Error');
         errorCity.className = 'error-message-shown'
@@ -176,4 +177,104 @@ function checkDniNumber(e) {
     } else {
         console.log(dniNumber.value);
     }
+}
+//Alert with the form info or the errors report
+function infoAlert(e) {
+    labelArray = ['Name: ', 'Email: ', 'Password: ', 'Password verification: ',
+    'Age: ', 'Contact number: ', 'Adress: ', 'city: ', 'zip code: ', 'DNI: '];
+    dataArray = [];
+    errorArray=[];
+    if(errorName.className === 'error-message-shown'){
+       errorArray.push('Error in Name');
+       dataArray.push(' ');
+    } else {
+        dataArray.push(String(fullName.value));
+        errorArray.push(' ');    
+    }
+    if(errorEmail.className === 'error-message-shown'){
+        errorArray.push('is too short or have no spaces');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(email.value));
+         errorArray.push(' ');
+    }
+    if(errorFirstPassword.className === 'error-message-shown'){
+        errorArray.push('is invalid');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(firstPassword.value));
+         errorArray.push(' ');    
+    }
+    if(errorSecondPassword.className === 'error-message-shown'){
+        errorArray.push('Passwords don'+"'"+'t match');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(secondPassword.value));
+         errorArray.push(' ');    
+    }
+    if(errorAge.className === 'error-message-shown'){
+        errorArray.push('is lower than 18');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(age.value));
+         errorArray.push(' ');
+    }
+    if(errorPhoneNumber.className === 'error-message-shown'){
+        errorArray.push('too short or doesn'+"'"+'t exist');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(phoneNumber.value));
+         errorArray.push(' ');
+    }
+    if(errorAdress.className === 'error-message-shown'){
+        errorArray.push('is invalid');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(adress.value));
+         errorArray.push(' ');
+    }
+    if(errorCity.className === 'error-message-shown'){
+        errorArray.push('does'+"'"+'t exist');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(city.value));
+         errorArray.push(' ');
+    }
+    if(errorZipCode.className === 'error-message-shown'){
+        errorArray.push('is too short');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(zipCode.value));
+         errorArray.push(' ');
+    }
+    if(errorDniNumber.className === 'error-message-shown'){
+        errorArray.push('hast to be 6-7 numbers long');
+        dataArray.push(' ');
+    } else {
+         dataArray.push(String(dniNumber.value));
+         errorArray.push(' ');
+    }
+    if (dataArray.includes('')){
+        alert('missing fields')
+        e.preventDefault();
+    }else {
+        alert(labelArray[0]+dataArray[0]+errorArray[0]+'\n'+
+            labelArray[1]+dataArray[1]+errorArray[1]+'\n'+
+            labelArray[2]+dataArray[2]+errorArray[2]+'\n'+
+            labelArray[3]+dataArray[3]+errorArray[3]+'\n'+
+            labelArray[4]+dataArray[4]+errorArray[4]+'\n'+
+            labelArray[5]+dataArray[5]+errorArray[5]+'\n'+
+            labelArray[6]+dataArray[6]+errorArray[6]+'\n'+
+            labelArray[7]+dataArray[7]+errorArray[7]+'\n'+
+            labelArray[8]+dataArray[8]+errorArray[8]+'\n'+
+            labelArray[9]+dataArray[9]+errorArray[9]);
+    }
+}
+//Bonus track 
+var bonus = document.getElementById('bonus-track');
+var copyName = '';
+fullName.addEventListener('keypress', bonusFunction);
+function bonusFunction(e) {
+    bonus.insertAdjacentText('afterend', 's');
+    console.log(bonus);
 }

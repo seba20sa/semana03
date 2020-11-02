@@ -20,13 +20,16 @@ header {
 }
 @media only screen and (min-width: 1200px) {
     #first-section span {
-     font-size: 100zpx;
+     font-size: 100px;
     }
 }
-#hidden-nav-bar {
+#hidden-nav-bar {    
     display: none;
     padding: 2px 0px;
     background-color: rgb(34, 34, 34);
+}
+#hidden-nav-bar ul {
+    margin-left: -30px;
 }
 /*hidden-nav-bar media queries 480, 900 and 1024*/
 @media only screen and (min-width: 480px) {
