@@ -1,11 +1,11 @@
 form {
     background-color: aqua;
-    padding: 10px 0px 15px 0px;    
+    padding: 10px 0px 15px 0px;
     border-radius: 7px;
 }
 form label {
     font-weight: bold;
-    color: rgb(80, 130, 60);    
+    color: rgb(80, 130, 60);
 }
 form input {
     border-radius: 7px;
@@ -22,30 +22,30 @@ form p {
 }
 /*Error class starts always hidden*/
 .error-message-hidden {
-    display: none;        
+    display: none;
 }
-.error-message-shown {    
+.error-message-shown {
     font-weight: blod;
-    color: red;    
+    color: red;
 }
 #button-wrap {
-    margin-top: 20px;    
+    margin-top: 20px;
     text-align: center;
     
     padding-bottom: 15px;
 }
-#send-button {    
+#send-button {
     width: 260px;
     border-radius: 7px;
     font-weight: bold;
 }
-@media only screen and (min-width: 480px) {   
+@media only screen and (min-width: 480px) {
     #forms-container  {
         text-align: center;
         flex-direction: column;
     }
 }
-@media only screen and (max-width: 768px) {   
+@media only screen and (max-width: 768px) {
     #forms-container {
         text-align: center;
         flex-direction: column;
@@ -58,6 +58,6 @@ form p {
         align-content: space-around;
     }
     #left-form, #right-form {
-        flex: 1;        
+        flex: 1;
     }
 }

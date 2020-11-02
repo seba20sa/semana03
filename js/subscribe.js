@@ -151,7 +151,7 @@ function checkCity(e) {
         console.log(city.value);
     } else {
         console.log('Error');
-        errorCity.className = 'error-message-shown'
+        errorCity.className = 'error-message-shown';
     }
 }
 function hideErrorZipCode(e) {
@@ -255,7 +255,7 @@ function infoAlert(e) {
          errorArray.push(' ');
     }
     if (dataArray.includes('')){
-        alert('missing fields')
+        alert('missing fields');
         e.preventDefault();
     }else {
         alertArray=[];
@@ -264,42 +264,10 @@ function infoAlert(e) {
             alertArray.push( y );
             alertArray.push('\n');
         }
-        
-
         var alertString = '';
-        for (i =0; i < labelArray.length; i++){
+        for (i =0; i < alertArray.length; i++){
             alertString=alertString+(String(alertArray[i]));
-        } 
-        
-        console.log(alertString);
+        }
         alert(alertString);
-        e.preventDefault();
     }
-  
-     
 }
-    
-
-
-//Bonus track 
-// var bonus = document.getElementById('bonus-track');
-// var copyName = '';
-// fullName.addEventListener('keypress', bonusFunction);
-// function bonusFunction(e) {
-//     bonus.insertAdjacentText('afterend', 's');
-//     console.log(bonus);
-// }
-
-
-
-
-// alert(labelArray[0]+dataArray[0]+errorArray[0]+'\n'+
-//             labelArray[1]+dataArray[1]+errorArray[1]+'\n'+
-//             labelArray[2]+dataArray[2]+errorArray[2]+'\n'+
-//             labelArray[3]+dataArray[3]+errorArray[3]+'\n'+
-//             labelArray[4]+dataArray[4]+errorArray[4]+'\n'+
-//             labelArray[5]+dataArray[5]+errorArray[5]+'\n'+
-//             labelArray[6]+dataArray[6]+errorArray[6]+'\n'+
-//             labelArray[7]+dataArray[7]+errorArray[7]+'\n'+
-//             labelArray[8]+dataArray[8]+errorArray[8]+'\n'+
-//             labelArray[9]+dataArray[9]+errorArray[9]);
