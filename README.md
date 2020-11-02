@@ -21,3 +21,6 @@ Created an article link bar that shows only 3 article links up to 900px, 6 links
 ## Sixth
 The ads section behaves in a similar fashion than the article link bar, once it gets to 1024px a new ad
 appears in order to take advantage of the new aviable space.
+
+## Fifth week 
+Added a subscribe page linked on the header nav bar that pops down with the burger menu on the mobile version. The form has a responsive design that changes depending on the size of the screen (up to 480 px or higher). The form's field perform different kinds of validations depending on the data each needs.  
