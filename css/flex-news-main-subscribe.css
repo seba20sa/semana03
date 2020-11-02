@@ -11,13 +11,15 @@ form input {
     border-radius: 7px;
     width: 60%;
 }
+form span {
+    margin-left: 2%;
+}
 form p {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 45px;
 }
-
 /*Error class starts always hidden*/
 .error-message-hidden {
     display: none;        

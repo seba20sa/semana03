@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/flex-news-main.css">
     <link rel="stylesheet" type="text/css" href="css/flex-news-main-subscribe.css">
     <link rel="stylesheet" type="text/css" href="css/flex-news-footer.css">
-    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+    <script src="js/subscribe.js" defer="defer"></script>
+    <script src="js/flex-news-main.js" defer="defer"></script>    
     <title>formulario</title>    
 </head>
 <body>
@@ -72,7 +74,9 @@
         </div>
     </div>
     <form >
-        <span id="bonus-track">Hello: </span>
+        <span id="bonus-track">
+            Hello: 
+        </span>
         <p>Please correctly complete all the fields bellow</p>
         <div id="forms-container">
             <div id="left-form">
@@ -148,7 +152,7 @@
                     Adress:
                 </label>
                 <br>
-                <input type="text" id="adress">
+                <input type="text" name="adress" id="adress">
                 <div class="error-message-hidden" id="error-adress">
                     <span>
                         Only one space, no less than 5 characters. 
@@ -159,7 +163,7 @@
                     City:
                 </label>
                 <br>
-                <input type="text" id="city">
+                <input type="text" name="city" id="city">
                 <div class="error-message-hidden" id="error-city">
                     <span>
                         Must be at least 3 characters long
@@ -170,7 +174,7 @@
                 Zip Code:
                 </label>
                 <br>
-                <input type="number" id="zip-code">
+                <input type="number" name="zip-code" id="zip-code">
                 <div class="error-message-hidden" id="error-zip-code">
                     <span>
                         Must have 3 characters or more.
@@ -181,7 +185,7 @@
                     DNI:
                 </label>
                 <br>
-                <input type="number" id="dni-number">
+                <input type="number" name="dni-number" id="dni-number">
                 <div class="error-message-hidden" id="error-dni-number">
                     <span>
                         Mus be 7 to 8 charactsers long.
@@ -254,8 +258,6 @@
         </div>
     </footer>
 </body>
-<script src="js/subscribe.js"></script>
-<script src="js/flex-news-main.js"></script>
 </html>
 
 
