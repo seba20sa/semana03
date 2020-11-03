@@ -72,24 +72,14 @@ function hideErrorFirstPassword(e) {
     errorFirstPassword.className = 'error-message-hidden';
 }
 function checkFirstPassword(e) {
-    arrayLetters = [];
-    arrayNumbers = [];
-    for (i = 0; i < firstPassword.value.length;i++) {
-        if(!isNaN(firstPassword.value[i])) {
-            arrayNumbers.push(firstPassword.value[i]);
-        } else {
-            arrayLetters.push(firstPassword.value[i]);
-        }
-    }    
-    if (arrayLetters.length == 0 || arrayNumbers.length == 0) {
+    if (firstPassword.value.match(/^[0-9]+$/)) {
         errorFirstPassword.className = 'error-message-shown';
-    } else if (firstPassword.value == '') {
+
+    } else if(firstPassword.value.match(/^[a-zA-Z]+$/)) {
         errorFirstPassword.className = 'error-message-shown';
     } else {
-        console.log(arrayLetters);
-        console.log(arrayNumbers);
         console.log(firstPassword.value);
-        }
+    }
 }
 function hideErrorSecondPassword(e) {
     errorSecondPassword.className = 'error-message-hidden';
